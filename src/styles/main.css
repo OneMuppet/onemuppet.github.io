@@ -1,0 +1,45 @@
+
+:root {
+  --top: #d6f1ec;
+  --bottom: #ffccc8;
+  --dark: #262F34;
+  --light: #fff;
+  --space-s: 8px;
+  --space-m: 16px;
+}
+
+/**/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+#content-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 56px auto 56px;
+  height: 100vh;
+  width: 100vw;
+  background: var(--light);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  grid-row-gap: 2px;
+}
+
+#content {
+  grid-column: 1;
+  grid-row: 2;
+  overflow-y: scroll; /* has to be scroll, not auto, to support iOS flick-scrolling */
+  -webkit-overflow-scrolling: touch;
+  display: grid;
+  justify-content: center;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  #content {
+    display: block;
+  }
+}
