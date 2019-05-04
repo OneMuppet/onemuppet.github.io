@@ -5,6 +5,9 @@ class TqSectionList extends HTMLElement {
     this._data;
     this.render = this.render.bind(this)
     this.updateNav = this.updateNav.bind(this)
+    this.navButtons = [];
+    this.activeSection;
+    this.activeButton;
     this.attachShadow({ mode: 'open' })
     this.render()
   }
@@ -13,25 +16,52 @@ class TqSectionList extends HTMLElement {
     this.sections = this.shadowRoot.querySelector('slot').assignedElements();
     this.nav = this.shadowRoot.querySelector('nav');
     this.updateNav();
+    window.addEventListener('scroll', this.highlightMenuItem.bind(this));
   }
+
   disconnectedCallback() {
+    window.removeEventListener('scroll', this.highlightMenuItem);
+  }
+
+  highlightMenuItem(e) {
+    if (!this.sections) { return; }
+    const modifier = 100;
+    let counter = 0;
+
+    for (let section of this.sections) {
+      if ((window.scrollY + modifier) > (section.offsetTop)) {
+        // Set active navigation button
+        if (this.activeButton) {
+          this.activeButton.classList.remove('active')
+        }
+        this.activeButton = this.navButtons[counter]
+        this.activeButton.classList.add('active');
+      } else {
+        this.navButtons[counter].classList.remove('active');
+      }
+
+      counter++;
+    }
   }
 
   updateNav() {
-    let navHtml = '';
-    let counter = 0;
+    let counter = 0
     for (let section of this.sections) {
-      counter++;
       let id = `section-${counter}`;
-      navHtml += `
-      <li>
-        <a href="#${id}"></a>
-      </li>`;
+      let item = document.createElement('li')
+
+      let btn = document.createElement('a')
+      btn.href = `#${id}`
+      this.navButtons.push(btn)
+
+      item.appendChild(btn)
+      this.nav.appendChild(item)
+
       section.id = id;
-      console.log(section);
+      counter++;
     }
-    this.nav.innerHTML = navHtml;
   }
+
   render() {
     this.shadowRoot.innerHTML = `
       <style>
@@ -56,6 +86,9 @@ class TqSectionList extends HTMLElement {
           align-items: center;
           color: var(--grey);
           margin: 4px;
+        }
+        a.active {
+          background: #fff;
         }
         li {
           list-style: none;
