@@ -1,7 +1,7 @@
 let dataCacheName = 'twiqqsData'
 let cacheName = 'twiqqs'
 let filesToCache = [
-  'https://fonts.googleapis.com/css?family=Roboto:100,300,700',
+  'https://fonts.googleapis.com/css?family=Cookie|Montserrat:200,500,700',
   '/images/icons/icon-72x72.png',
   '/images/icons/icon-96x96.png',
   '/images/icons/icon-128x128.png',
@@ -10,8 +10,7 @@ let filesToCache = [
   '/images/icons/icon-192x192.png',
   '/images/icons/icon-384x384.png',
   '/images/icons/icon-384x384.png',
-  '/images/icons/icon-512x512.png',
-  '/images/man.png'
+  '/images/icons/icon-512x512.png'
 ]
 
 self.addEventListener('install', (e) => {
@@ -45,7 +44,7 @@ self.addEventListener('activate', function (e) {
 })
 
 self.addEventListener('fetch', (e) => {
-  let dataUrl = 'https://pbkh6aqm1e.execute-api.eu-west-1.amazonaws.com/test/twiqqs/'
+  let dataUrl = 'add-something-here'
   if (e.request.url.indexOf(dataUrl) > -1) {
     /*
      * When the request URL contains dataUrl, the app is asking for fresh data.

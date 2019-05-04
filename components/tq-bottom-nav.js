@@ -45,6 +45,7 @@ class TqBottomNav extends HTMLElement {
           background-color: transparent;
           background-size: 50% 50%;
           border: none;
+          color: var(--grey);
           transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
           transition-property: background-color;
         }
