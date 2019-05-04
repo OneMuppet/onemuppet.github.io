@@ -45,7 +45,7 @@ h1, h2, h3 {
 }
 
 #content *:last-child {
-  margin-bottom: 0;
+  margin-bottom: calc(var(--bar-height) + 1px);
 }
 
 /* Small screens */
