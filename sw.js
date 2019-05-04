@@ -1,5 +1,5 @@
-let dataCacheName = 'twiqqsData'
-let cacheName = 'twiqqs'
+let dataCacheName = 'twiqqsData-v2'
+let cacheName = 'twiqqs-v2'
 let filesToCache = [
   'https://fonts.googleapis.com/css?family=Cookie|Montserrat:200,500,700',
   '/images/icons/icon-72x72.png',
