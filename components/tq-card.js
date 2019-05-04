@@ -20,11 +20,10 @@ class TqCard extends HTMLElement {
           display: block;
         }
         .card {
-          margin: 0 var(--space-s);
+          margin: 2px var(--space-s);
           padding: 0;
           color: var(--dark);
           background: #fff;
-          border-radius: calc(var(--space-s) / 2);
           height: 400px;
           width: 320px;
           position: relative;
@@ -45,11 +44,12 @@ class TqCard extends HTMLElement {
           font-size: 28px;
         }
         ::slotted(img) {
-          border-radius: calc(var(--space-s) / 2) calc(var(--space-s) / 2);
           box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
           width: 100%;
           height: 400px;
           object-fit: cover;
+          border: 1px solid rgba(255,255,255,0.3);
+          box-sizing: border-box;
         }
         /* Small screens */
         @media only screen and (max-width: 600px) {

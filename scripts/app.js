@@ -1,6 +1,7 @@
 import { } from '../components/tq-topbar.js';
 import { } from '../components/tq-card.js';
-import { } from '../components/tq-bottom-nav.js';
+import { } from '../components/tq-section.js';
+import { } from '../components/tq-section-list.js';
 import { addDeviceClasses } from './browser.js';
 import { registerServiceWorker } from './serviceWorkerHelper.js';
 
