@@ -35,11 +35,14 @@ class TqBottomNav extends HTMLElement {
           height: 40px;
           font-size: 16px;
           cursor: pointer;
-          background: var(--light);
+          background-color: transparent;
+          background-size: 50% 50%;
           border: none;
+          transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          transition-property: background-color;
         }
         ::slotted(button:hover) {
-          background: var(--top);
+          background-color: var(--top);
         }
         ::slotted(button:active) {
           border:1px solid var(--bottom);

@@ -23,9 +23,10 @@ class TqTopbar extends HTMLElement {
           background: var(--top);
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: center;
           box-sizing: border-box;
-          color: var(--light);
+        }
+        h1 {
           font-weight: 900;
           font-size: 24px;
         }
@@ -34,7 +35,7 @@ class TqTopbar extends HTMLElement {
         }
       </style>
       <div class="topbar">
-        Twiqqs
+        <slot name="title">Twiqqs</slot>
       </div>
     `
   }

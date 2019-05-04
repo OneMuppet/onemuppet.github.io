@@ -39,14 +39,10 @@ class TqCard extends HTMLElement {
           background: rgba(255,255,255,0.3);
           height: 130px;
         }
-        hr {
-          height: 1px;
-          background-color: #eee;
-          border: none;
-        }
         ::slotted(h3) {
           margin: 0;
           padding: 0;
+          font-size: 28px;
         }
         ::slotted(img) {
           border-radius: calc(var(--space-s) / 2) calc(var(--space-s) / 2);

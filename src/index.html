@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Twiqqs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700" rel="stylesheet" defer>
+  <link href="https://fonts.googleapis.com/css?family=Cookie|Montserrat:200,500,700" rel="stylesheet" defer>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link rel="manifest" href="/manifest.json">
   <!-- Add to home screen for Safari on iOS -->
@@ -54,7 +54,9 @@
 
 <body>
   <div id="content-container">
-    <tq-topbar></tq-topbar>
+    <tq-topbar>
+      <h1 slot="title">Twiqqs</h1>
+    </tq-topbar>
     <div id="content">
       <tq-card>
         <img slot="img" src="images/card-1.jpg" />
@@ -62,7 +64,12 @@
         <div slot="body">A body</div>
       </tq-card>
       <tq-card>
-        <img slot="img" src="images/card-1.jpg" />
+        <img slot="img" src="images/card-2.jpg" />
+        <h3 slot="title">A title</h3>
+        <div slot="body">A body</div>
+      </tq-card>
+      <tq-card>
+        <img slot="img" src="images/card-3.jpg" />
         <h3 slot="title">A title</h3>
         <div slot="body">A body</div>
       </tq-card>
@@ -72,12 +79,7 @@
         <div slot="body">A body</div>
       </tq-card>
       <tq-card>
-        <img slot="img" src="images/card-1.jpg" />
-        <h3 slot="title">A title</h3>
-        <div slot="body">A body</div>
-      </tq-card>
-      <tq-card>
-        <img slot="img" src="images/card-1.jpg" />
+        <img slot="img" src="images/card-2.jpg" />
         <h3 slot="title">A title</h3>
         <div slot="body">A body</div>
       </tq-card>

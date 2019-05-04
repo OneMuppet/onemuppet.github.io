@@ -4,15 +4,24 @@
   --bottom: #ffccc8;
   --dark: #262F34;
   --light: #fff;
+  --grey: rgb(140, 140, 140);
   --space-s: 8px;
   --space-m: 16px;
+
 }
 
 /**/
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
+  margin: 0;
+  padding: 0;
+  color: var(--grey);
+}
+
+h1, h2, h3 {
+  font-family: 'Cookie', cursive;
   margin: 0;
   padding: 0;
 }
@@ -34,7 +43,8 @@ body {
   overflow-y: scroll; /* has to be scroll, not auto, to support iOS flick-scrolling */
   -webkit-overflow-scrolling: touch;
   display: grid;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  justify-items: center;
 }
 
 /* Small screens */
