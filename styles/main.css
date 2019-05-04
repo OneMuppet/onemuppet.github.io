@@ -7,7 +7,7 @@
   --grey: rgb(140, 140, 140);
   --space-s: 8px;
   --space-m: 16px;
-
+  --bar-height: 56px;
 }
 
 /**/
@@ -34,17 +34,18 @@ h1, h2, h3 {
   width: 100vw;
   background: var(--light);
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  grid-row-gap: 2px;
+  grid-row-gap: 1px;
 }
 
 #content {
-  grid-column: 1;
   grid-row: 2;
-  overflow-y: scroll; /* has to be scroll, not auto, to support iOS flick-scrolling */
-  -webkit-overflow-scrolling: touch;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   justify-items: center;
+}
+
+#content *:last-child {
+  margin-bottom: 0;
 }
 
 /* Small screens */

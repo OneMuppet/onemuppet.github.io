@@ -16,15 +16,23 @@ class TqTopbar extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
       <style>
+        :host {
+          position: fixed; 
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 2;
+          box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+        }
+
         .topbar {
-          height: 56px;
-          width: 100vw;
           padding: 8px;
           background: var(--top);
           display: flex;
           align-items: center;
           justify-content: center;
           box-sizing: border-box;
+          height: var(--bar-height);
         }
         h1 {
           font-weight: 900;

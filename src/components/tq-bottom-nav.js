@@ -21,11 +21,11 @@ class TqBottomNav extends HTMLElement {
           bottom: 0;
           left: 0;
           right: 0;
-          z-index: 2;
-          box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
         }
+
         [name=buttons] {
           height: var(--bar-height);
+          width: 100vw;
           padding: var(--space-s);
           background: var(--bottom);
           display: flex;
