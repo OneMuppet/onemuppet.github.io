@@ -174,6 +174,12 @@ class TqSectionList extends HTMLElement {
           50% {bottom: 0;width: 40px;flex:1;}
           100% {bottom: var(--nav-bottom); width: 4px;}
         }
+        /* Small screens */
+        @media only screen and (max-width: 600px) {
+          .navigation.in {
+            left: -16px;
+          }
+        }
       </style>
       <div class="navigation in"></div>
       <div class="sections">

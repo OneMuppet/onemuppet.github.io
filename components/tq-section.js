@@ -29,6 +29,12 @@ class TqSection extends HTMLElement {
           padding: 0;
           margin: 0;
         }
+        /* Small screens */
+        @media only screen and (max-width: 600px) {
+          :host {
+            padding: var(--space-s);
+          }
+        }
       </style>
       <slot></slot>
     `

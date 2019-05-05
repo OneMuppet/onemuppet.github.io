@@ -54,7 +54,7 @@ class TqCard extends HTMLElement {
         /* Small screens */
         @media only screen and (max-width: 600px) {
           .card {
-            margin: 0 0 calc(var(--space-s) / 4) 0;
+            margin: 0 0 var(--space-s) 0;
             width: 100%;
           }
         }
