@@ -18,6 +18,7 @@ class TqSectionList extends HTMLElement {
     this.updateNav();
     this.nav.addEventListener('click', this.toggleMenu.bind(this))
     window.addEventListener('scroll', this.highlightMenuItem.bind(this));
+    this.highlightMenuItem();
   }
 
   disconnectedCallback() {
@@ -26,7 +27,11 @@ class TqSectionList extends HTMLElement {
     this.toggleMenu.bind(this)
   }
 
-  toggleMenu() {
+  toggleMenu(e) {
+    if (this.nav.classList.value.indexOf('out') === -1) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
     this.nav.classList.toggle('out');
   }
 
@@ -56,6 +61,7 @@ class TqSectionList extends HTMLElement {
       let id = `section-${counter}`;
       let btn = document.createElement('a')
       btn.href = `#${id}`
+      btn.style.background = `${getComputedStyle(section, null).backgroundColor}`;
       this.navButtons.push(btn)
       this.nav.appendChild(btn)
       section.id = id;
@@ -68,7 +74,8 @@ class TqSectionList extends HTMLElement {
       <style>
         :host {
           display: block;
-          --nav-bottom: 256px;
+          --nav-bottom: 20%;
+          --duration: .3s;
         }
         .navigation.in {
           position: fixed;
@@ -80,19 +87,73 @@ class TqSectionList extends HTMLElement {
           justify-content: center;
           width: 40px;
           flex-wrap: wrap;
+          padding: 16px;
+          background: rgba(0,0,0,0.1);
+          box-sizing: border-box;
+          border-radius: 8px;
         }
         .navigation.in {
           animation: menuIn;
           animation-fill-mode: both;
-          animation-duration: 1s;
+          animation-duration: var(--duration);
           animation-timing-function: ease-out;
         }
         .navigation.out {
           animation: menuOut;
           animation-fill-mode: both;
-          animation-duration: 1s;
+          animation-duration: var(--duration);
           animation-timing-function: ease-out;
         }
+        a {
+          text-decoration: none;
+          width: 4px;
+          height: 64px;
+          padding: 8px;
+          background: #FFF4E2;
+          border-radius: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: var(--grey);
+          margin: 4px;
+        }
+        .navigation.out a {
+          width: 128px;
+          height: 36px;
+          animation: menuItemOut;
+          animation-fill-mode: both;
+          animation-duration: var(--duration);
+          animation-timing-function: ease-out;
+        }
+        .navigation a {
+          width: 4px;
+          height: 64px;
+          animation: menuItemIn;
+          animation-fill-mode: both;
+          animation-duration: var(--duration);
+          animation-timing-function: ease-out;
+        }
+        a.active {
+          background: #fff;
+          border: 1px solid var(--light);
+        }
+        li {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+        }
+        .hide {
+          display: none;
+        }
+        ::slotted(tq-section:nth-child(even)) {
+          background: var(--top);
+        }
+        ::slotted(tq-section:nth-child(odd)) {
+          background: var(--bottom);
+        }
+
+        /* Animations */
         @keyframes menuOut {
           0% {bottom: var(--nav-bottom);width:40px;}
           50% {bottom: 0;width: 40px;}
@@ -111,54 +172,7 @@ class TqSectionList extends HTMLElement {
         @keyframes menuItemIn {
           0%{bottom: 0;width: 100vw;flex:1;}  
           50% {bottom: 0;width: 40px;flex:1;}
-          100% {bottom: var(--nav-bottom)}
-        }
-        a {
-          text-decoration: none;
-          width: 8px;
-          height: 64px;
-          padding: 8px;
-          background: #FFF4E2;
-          border-radius: 16px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: var(--grey);
-          margin: 4px;
-        }
-        .navigation.out a {
-          width: 128px;
-          height: 36px;
-          animation: menuItemOut;
-          animation-fill-mode: both;
-          animation-duration: 1s;
-          animation-timing-function: ease-out;
-        }
-        .navigation a {
-          width: 8px;
-          height: 64px;
-          animation: menuItemIn;
-          animation-fill-mode: both;
-          animation-duration: 1s;
-          animation-timing-function: ease-out;
-        }
-        a.active {
-          background: #fff;
-        }
-        li {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: inline-block;
-        }
-        .hide {
-          display: none;
-        }
-        ::slotted(tq-section:nth-child(even)) {
-          background: var(--top);
-        }
-        ::slotted(tq-section:nth-child(odd)) {
-          background: var(--bottom);
+          100% {bottom: var(--nav-bottom); width: 4px;}
         }
       </style>
       <div class="navigation in"></div>
