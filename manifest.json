@@ -1,8 +1,8 @@
 {
   "name": "Twiqqs",
   "short_name": "Twiqqs",
-  "theme_color": "#262f34",
-  "background_color": "#262f34",
+  "theme_color": "#d6f1ec",
+  "background_color": "#d6f1ec",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/index.html",
@@ -48,7 +48,6 @@
       "type": "image/png"
     }
   ],
-  "splash_pages": null,
   "gcm_sender_id": "103953800507",
   "applicationServerKey": "BEkTFgQP117KSXQwKGi1YMmwqyrY-8nWwYLZOiwlOmADh1WfvExnUF5gi6KZb4e--yLc3E9YQO0GbhIe1Pg7K2Q"
 }
