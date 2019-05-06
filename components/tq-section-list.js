@@ -32,6 +32,9 @@ class TqSectionList extends HTMLElement {
     if (this.nav.classList.value.indexOf('out') === -1) {
       e.stopPropagation();
       e.preventDefault();
+      setTimeout(() => { this.nav.style.flex = '1'; }, 150);
+    } else {
+      setTimeout(() => { this.nav.style.flex = '0'; }, 150);
     }
     this.nav.classList.toggle('out');
   }
@@ -81,7 +84,7 @@ class TqSectionList extends HTMLElement {
         }
         .navigation.in {
           position: fixed;
-          left: 0;
+          right: 0;
           bottom: var(--nav-bottom);
           z-index: 9;
           display: flex;
@@ -110,7 +113,7 @@ class TqSectionList extends HTMLElement {
         a {
           text-decoration: none;
           width: 4px;
-          height: 64px;
+          height: 36px;
           padding: 8px;
           background: #FFF4E2;
           border-radius: 16px;
@@ -122,7 +125,6 @@ class TqSectionList extends HTMLElement {
         }
         .navigation.out a {
           width: 128px;
-          height: 36px;
           animation: menuItemOut;
           animation-fill-mode: both;
           animation-duration: var(--duration);
@@ -130,7 +132,6 @@ class TqSectionList extends HTMLElement {
         }
         .navigation a {
           width: 4px;
-          height: 64px;
           animation: menuItemIn;
           animation-fill-mode: both;
           animation-duration: var(--duration);
