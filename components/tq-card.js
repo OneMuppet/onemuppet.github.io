@@ -20,14 +20,13 @@ class TqCard extends HTMLElement {
           display: block;
         }
         .card {
-          margin: 2px var(--space-s);
+          margin: var(--space-s);
           padding: 0;
           color: var(--dark);
           background: #fff;
           height: 400px;
           width: 320px;
           position: relative;
-          color: rgba(0,0,0,0.5);
         }
         .body {
           padding: var(--space-s);
@@ -35,7 +34,8 @@ class TqCard extends HTMLElement {
           bottom: 0;
           left: 0;
           right: 0;
-          background: rgba(255,255,255,0.3);
+          background: rgba(255,255,255,0.75);
+          font-size: 16px;
           height: 130px;
         }
         ::slotted(h3) {

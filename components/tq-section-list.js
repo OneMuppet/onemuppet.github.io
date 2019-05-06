@@ -139,7 +139,7 @@ class TqSectionList extends HTMLElement {
         }
         a.active {
           background: #fff;
-          border: 1px solid var(--light);
+          border: 1px solid var(--dark);
         }
         li {
           list-style: none;

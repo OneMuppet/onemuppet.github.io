@@ -2,7 +2,7 @@
 :root {
   --top: #d6f1ec;
   --bottom: #ffccc8;
-  --dark: #262F34;
+  --dark: rgb(116, 116, 116);
   --light: #fff;
   --grey: rgb(140, 140, 140);
   --space-s: 8px;

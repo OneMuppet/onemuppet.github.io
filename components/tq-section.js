@@ -20,6 +20,7 @@ class TqSection extends HTMLElement {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
           justify-items: center;
+          padding: 24px 0;
         }
         a {
           text-decoration: none;
