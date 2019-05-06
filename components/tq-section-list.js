@@ -91,6 +91,7 @@ class TqSectionList extends HTMLElement {
           background: rgba(0,0,0,0.1);
           box-sizing: border-box;
           border-radius: 8px;
+          touch-action: manipulation;
         }
         .navigation.in {
           animation: menuIn;
