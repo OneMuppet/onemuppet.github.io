@@ -32,9 +32,6 @@ class TqSectionList extends HTMLElement {
     if (this.nav.classList.value.indexOf('out') === -1) {
       e.stopPropagation();
       e.preventDefault();
-      setTimeout(() => { this.nav.style.flex = '1'; }, 150);
-    } else {
-      setTimeout(() => { this.nav.style.flex = '0'; }, 150);
     }
     this.nav.classList.toggle('out');
   }
