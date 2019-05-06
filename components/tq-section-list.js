@@ -125,6 +125,7 @@ class TqSectionList extends HTMLElement {
           animation-fill-mode: both;
           animation-duration: var(--duration);
           animation-timing-function: ease-out;
+          flex:1;
         }
         .navigation a {
           width: 4px;
@@ -166,7 +167,7 @@ class TqSectionList extends HTMLElement {
           100% {bottom: var(--nav-bottom);}
         }
         @keyframes menuItemOut {
-          0% {bottom: var(--nav-bottom)}
+          0% {bottom: var(--nav-bottom);}
           50% {bottom: 0;flex:1;}
           100%{bottom: 0;width: 100vw;flex:1;}  
         }
@@ -177,9 +178,7 @@ class TqSectionList extends HTMLElement {
         }
         /* Small screens */
         @media only screen and (max-width: 600px) {
-          .navigation.in {
-            left: -16px;
-          }
+          
         }
       </style>
       <div class="navigation in"></div>
