@@ -127,7 +127,6 @@ class TqSectionList extends HTMLElement {
           animation-fill-mode: both;
           animation-duration: var(--duration);
           animation-timing-function: ease-out;
-          flex:1;
         }
         .navigation a {
           width: 4px;
