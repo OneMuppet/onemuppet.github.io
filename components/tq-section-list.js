@@ -2,9 +2,10 @@ class TqSectionList extends HTMLElement {
 
   constructor() {
     super()
-    this._data;
+    this._data; // TODO add posibility to push new section...
     this.render = this.render.bind(this)
     this.updateNav = this.updateNav.bind(this)
+    this.colors = ['var(--bottom)', '#FFF4E2', 'var(--top)'];
     this.navButtons = [];
     this.activeSection;
     this.activeButton;
@@ -58,10 +59,11 @@ class TqSectionList extends HTMLElement {
   updateNav() {
     let counter = 0
     for (let section of this.sections) {
+      section.style.backgroundColor = this.colors[counter % this.colors.length]
       let id = `section-${counter}`;
       let btn = document.createElement('a')
       btn.href = `#${id}`
-      btn.style.background = `${getComputedStyle(section, null).backgroundColor}`;
+      btn.style.background = section.style.backgroundColor;//`${getComputedStyle(section, null).backgroundColor}`;
       this.navButtons.push(btn)
       this.nav.appendChild(btn)
       section.id = id;
